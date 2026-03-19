@@ -1,10 +1,10 @@
 pipeline {
-    agent any  // Run on any available Jenkins agent
+    agent any 
 
     environment {
-        AWS_REGION = "eu-north-1"  // Change as per your setup
+        AWS_REGION = "eu-north-1"  
         INSTANCE_USER = "ubuntu"
-        TERRAFORM_DIR = "$WORKSPACE/terraform-setup"  // Directory with main.tf
+        TERRAFORM_DIR = "$WORKSPACE/terraform-setup"  
     }
 
     stages {
@@ -67,7 +67,7 @@ pipeline {
         stage('Wait for EC2 to be Ready') {
             steps {
                 script {
-                    sleep(30)  // Wait for 1 minute to allow instance setup
+                    sleep(30)  
                 }
             }
         }
