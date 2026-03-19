@@ -1,25 +1,43 @@
 # Jenkins CI/CD Pipeline Project
 
-🚀 This project demonstrates a complete CI/CD pipeline using Jenkins to automate infrastructure provisioning and application deployment.
+This project demonstrates a Jenkins pipeline that automates the deployment of a web application (2048 game) on an AWS EC2 instance using Docker.
 
-## Overview
+## Features
 
-This project automates the end-to-end workflow of deploying a web application (2048 game) on an AWS EC2 instance using Jenkins and Docker. It provides hands-on experience in modern DevOps practices, integrating popular tools like Jenkins, Terraform, AWS, and Docker.
+- Automates infrastructure provisioning and application deployment
+- Uses Jenkins for CI/CD
+- Provisions EC2 instance with Terraform
+- Installs Docker and runs the 2048 game container
+- Outputs EC2 public IP for easy access
 
-**Key Features:**
-
-- **Jenkins Pipeline** for end-to-end automation
-- **Terraform** to provision AWS EC2 infrastructure
-- **Secure AWS credential handling** in Jenkins
-- **Docker setup and deployment** on the EC2 server
-- Automatic retrieval of EC2 public IP after provisioning
+## Project Structure
 
 ## Prerequisites
 
-- AWS account with access key and secret key
-- Jenkins installed and running
-- Terraform installed on the Jenkins server
-- Docker installed on target EC2 instances
-- SSH key for EC2 instance access
+- Jenkins installed
+- Terraform installed
+- AWS account with access key & secret key
+- SSH key for EC2 access
 
-## Project Structure
+## How It Works
+
+1. Jenkins pulls the repository from GitHub.  
+2. Terraform provisions an AWS EC2 instance.  
+3. Jenkins retrieves the EC2 public IP.  
+4. Docker is installed on the instance.  
+5. 2048 game is deployed inside a Docker container.  
+6. Access the game via the EC2 public IP.
+
+## Learning Outcomes
+
+- Understanding CI/CD pipelines  
+- Automating deployment and server setup  
+- Hands-on experience with Jenkins, Terraform, AWS, and Docker  
+
+## Tech Stack
+
+- Jenkins  
+- Terraform  
+- AWS EC2  
+- Docker  
+- Ubuntu  
