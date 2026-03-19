@@ -2,7 +2,7 @@ provider "aws" {
   region = "eu-north-1"
 }
 
-# 🔥 Create Security Group
+
 resource "aws_security_group" "web_sg" {
   name        = "jenkins-terraform-sg"
   description = "Allow SSH and HTTP"
@@ -12,7 +12,7 @@ resource "aws_security_group" "web_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]   # 🔥 allow SSH
+    cidr_blocks = ["0.0.0.0/0"]   
   }
 
   ingress {
@@ -20,7 +20,7 @@ resource "aws_security_group" "web_sg" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]   # 🔥 for 2048 game
+    cidr_blocks = ["0.0.0.0/0"]  
   }
 
   egress {
@@ -31,7 +31,7 @@ resource "aws_security_group" "web_sg" {
   }
 }
 
-# 🔥 EC2 Instance
+
 resource "aws_instance" "web_server" {
   ami           = "ami-080254318c2d8932f"
   instance_type = "t3.micro"
